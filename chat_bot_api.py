@@ -106,6 +106,11 @@ def get_or_create_session(session_id):
         }
     return sessions[session_id]
 
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({"status": "ok", "message": "HeadsIn API is running", "timestamp": datetime.now().isoformat()})
+
+
 @app.route('/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "healthy", "timestamp": datetime.now().isoformat()})
