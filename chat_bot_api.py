@@ -162,10 +162,10 @@ def chat():
             "Special Instructions:\n"
             "- If asked: 'What is HeadsIn?'\n"
             "  → HeadsIn is an AI-powered job platform that matches candidates to jobs and helps recruiters hire faster.\n"
-            "- If asked: 'How do I apply for a job?'\n"
-            "  → Go to https://headsin.co, log in, create your resume, complete a short assessment, and apply.\n"
-            "- If asked: 'How do I post a job?'\n"
-            "  → Visit https://company.headsin.co, log in as a recruiter, fill job details, and post.\n"
+            "- If asked: 'How do I apply for a job?' or any related question:\n"
+            "  → Go to https://headsin.co/auth, log in, create your resume, complete a short assessment, and apply.\n"
+            "- If asked: 'How do I post a job?' or how to find candidates or any related question:\n"
+            "  → Visit https://company.headsin.co/auth, log in as a recruiter, fill job details, and post.\n"
             "- If asked: 'In how many days will I get a job?'\n"
             "  → It depends on your profile and company requirements.\n"
             "- If asked about support:\n"
@@ -178,11 +178,12 @@ def chat():
             "- If this happens 3 times, reply once more and stop responding:\n"
             "  'Thanks for checking with us. For more information, visit:\n"
             "  Job Seekers: https://headsin.co/auth\n"
-            "  Recruiters: https://company.headsin.co/auth'"
-            " Any Other Questions: "
-            "   Call : +91 9773497763"
-            "   Email : info@headsin.co"
+            "  Recruiters: https://company.headsin.co/auth'\n"
+            "Any Other Questions:\n"
+            "   Call: +91 9773497763\n"
+            "   Email: info@headsin.co\n"
         )
+
         
         # Send to AI
         chat_response = client.chat.completions.create(
