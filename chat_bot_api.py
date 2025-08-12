@@ -117,6 +117,10 @@ def health_check():
 
 @app.route('/chat', methods=['POST'])
 def chat():
+    api_key_header = request.headers.get("X-API-KEY")
+    if api_key_header != os.getenv("CHAT_API_KEY"):
+        return jsonify({"error": "Unauthorized"}), 401
+    
     try:
         data = request.get_json()
         
