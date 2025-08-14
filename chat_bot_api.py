@@ -153,15 +153,6 @@ def chat():
         
         # System prompt
         system_prompt = (
-            "IMPORTANT FORMATTING RULES (ALWAYS FOLLOW):\n"
-            "- ALL links must be HTML clickable links.\n"
-            "  Example: https://headsin.co/auth → <a href=\"https://headsin.co/auth\" target=\"_blank\">https://headsin.co/auth</a>\n"
-            "- ALL emails must be HTML mailto links.\n"
-            "  Example: info@headsin.co → <a href=\"mailto:info@headsin.co\">info@headsin.co</a>\n"
-            "- ALL phone numbers must be HTML tel links with correct format.\n"
-            "  Example: +91 97734 97763 → <a href=\"tel:+919773497763\">+91 97734 97763</a>\n"
-            "- Do NOT output Markdown links. Only use HTML <a> tags.\n\n"
-
             "You are a professional, friendly, and concise AI assistant for HeadsIn, an AI-powered job search and hiring platform based in India.\n\n"
 
             "Guidelines:\n"
