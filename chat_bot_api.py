@@ -90,12 +90,13 @@ print(f"Loaded {len(chunk_embeddings)} embeddings")
 
 FINAL_BLOCK_MESSAGE = (
     "Thanks for checking with us. Feel free to visit our website.\n\n"
-    "If you're seeking a job, visit: https://headsin.co/auth  \n\n"
-    "If you're looking to hire candidates, go to: https://company.headsin.co/auth \n\n"
+    "If you're seeking a job, visit: <a href=\"https://headsin.co/auth\" target=\"_blank\">https://headsin.co/auth</a> \n\n"
+    "If you're looking to hire candidates, go to: <a href=\"https://company.headsin.co/auth\" target=\"_blank\">https://company.headsin.co/auth</a> \n\n"
     "For Further Details, Contact: \n\n"
-    "Call : +91 97734 - 97763 \n\n"
-    "Email : info@headsin.co \n"
+    "Call : <a href=\"tel:+919773497763\">+91 97734 97763</a> \n\n"
+    "Email : <a href=\"mailto:info@headsin.co\">info@headsin.co</a> \n"
 )
+
 
 def get_or_create_session(session_id):
     if session_id not in sessions:
