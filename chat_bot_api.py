@@ -135,7 +135,7 @@ def chat():
         session = get_or_create_session(session_id)
         
         # Check if session is blocked due to irrelevant questions
-        if session['irrelevant_count'] >= 2:
+        if session['irrelevant_count'] >= 3:
             return jsonify({
                 "response": FINAL_BLOCK_MESSAGE,
                 "session_id": session_id,
@@ -228,7 +228,7 @@ def chat():
         return jsonify({
             "response": answer,
             "session_id": session_id,
-            "blocked": session['irrelevant_count'] >= 2,
+            "blocked": session['irrelevant_count'] >= 3,
             "history": session['history']
         })
         
@@ -243,7 +243,7 @@ def get_session(session_id):
             "session_id": session_id,
             "history": sessions[session_id]['history'],
             "irrelevant_count": sessions[session_id]['irrelevant_count'],
-            "blocked": sessions[session_id]['irrelevant_count'] >= 2
+            "blocked": sessions[session_id]['irrelevant_count'] >= 3
         })
     else:
         return jsonify({"error": "Session not found"}), 404
